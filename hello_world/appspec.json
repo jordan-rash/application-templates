@@ -1,0 +1,16 @@
+{
+  "name": "helloworld",
+  "version": "0.0.1",
+  "description": "Echo Server that says hello!",
+  "components": [
+    {
+      "name": "echoservice",
+      "workload_type": "native",
+      "file_hash": "74ea6e851ff99eb20eb15d9d968c9ed2c399a36cae5099d6fc4067d40e80602f",
+      "placement_policy": {
+        "policy_name": "fixed_scale",
+        "instances": 1,
+      }
+    }
+  ]
+}
