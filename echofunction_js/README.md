@@ -32,6 +32,12 @@ synctl app versions --name echofunction_js
 ```bash
 synctl app deploy --name echofunction_js --version 0.0.1
 ```
+To verify deployment, run the `versions` command again. The deployed version should be highlighted
+```bash
+synctl app versions --name echofunction_js
+```
+
+> This step can also be completed via the UI under the `Applications` tab
 
 ### Interact with your application
 Using a context that is associated with your Synadia Cloud account, you can interact with your application using the `nats` CLI tool.
