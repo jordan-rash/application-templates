@@ -1,4 +1,3 @@
 [
-  {"name":"echofunction_js", "description":"Simple echoserver example using a Javascript function and the V8 engine","path":"./echofunction_js"},
-  {"name":"echoserver_go", "description":"Simple echoserver example using a Go binary","path":"./echoserver_go"}
+  {"name":"echofunction_js", "description":"Simple echoserver example using a Javascript function and the V8 engine","path":"./echofunction_js"}
 ]
