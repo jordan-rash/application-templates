@@ -47,5 +47,13 @@ nats req my.echotrigger "Hello, World"
 
 Your response should be:
 ```bash
-replace
+└─❯ nats req "Hello, World"
+10:45:31 Sending request on "my.echotrigger"
+10:45:31 Received with rtt 157.497898ms
+{"triggered_on":"my.echotrigger","payload":"Hello, World"}
+```
+
+### Undeploy your application
+```bash
+synctl app undeploy --name echofunction_js
 ```
