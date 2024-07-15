@@ -2,6 +2,8 @@
 
 ### Install the `synctl` binary
 
+> instructions TBD
+
 ### Set your environment
 ```bash
 export SCP_SERVER=https://cloud.synadia.com && \
