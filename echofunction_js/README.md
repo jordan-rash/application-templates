@@ -13,10 +13,19 @@ export SCP_ACCOUNT=<YOUR_SYNADIA_CLOUD_ACCOUNT_ID>
 ```bash
 synctl app art put -t v8 -f ./echofunction.js -n echofunction
 ```
+To verify the upload
+```bash
+synctl app art ls
+```
 
 ### Upload your appspec
 ```bash
 synctl app put --file ./appspec.json
+```
+To verify the upload
+```bash
+synctl app ls && \
+synctl app versions --name echofunction_js
 ```
 
 ### Deploy your application
