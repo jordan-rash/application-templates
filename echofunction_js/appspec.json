@@ -12,7 +12,8 @@
       ],
       "placement_policy": {
         "policy_name": "fixed_scale",
-        "instances": 1
+        "instances": 1,
+        "regions": []
       }
     }
   ]
