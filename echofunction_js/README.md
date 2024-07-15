@@ -42,7 +42,7 @@ synctl app versions --name echofunction_js
 ### Interact with your application
 Using a context that is associated with your Synadia Cloud account, you can interact with your application using the `nats` CLI tool.
 ```bash
-nats req my.echotrigger "Hello, World!"
+nats req my.echotrigger "Hello, World"
 ```
 
 Your response should be:
