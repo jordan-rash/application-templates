@@ -1,3 +1,4 @@
 [
-  {"name":"hello_world", "description":"Simple Hello world example","path":"./hello_world"}
+  {"name":"echoserver_js", "description":"Simple echoserver example using a Javascript function and the V8 engine","path":"./hello_world_js"},
+  {"name":"echoserver_go", "description":"Simple echoserver example using a Go binary","path":"./hello_world_go"}
 ]
