@@ -13,7 +13,9 @@
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": []
+        "regions": [
+          "us-east"
+        ]
       }
     }
   ]
