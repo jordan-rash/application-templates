@@ -1,3 +1,4 @@
 [
-  {"name":"echofunction_js", "description":"Simple echoserver example using a Javascript function and the V8 engine","path":"./echofunction_js"}
+  {"name":"echofunction_js", "description":"Simple echoserver example using a Javascript function and the V8 engine","path":"./echofunction_js"},
+  {"name":"todo_app", "description":"Simple CRUD based ToDo application","path":"./todo_app"}
 ]
