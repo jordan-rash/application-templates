@@ -1,0 +1,84 @@
+{
+  "name": "todo_app",
+  "version": "0.0.3",
+  "description": "CRUD ToDo Application",
+  "components": [
+    {
+      "name": "create",
+      "workload_type": "v8",
+      "trigger_subjects": [
+        "todo.0_0_1.create"
+      ],
+      "file_hash": "abcdabcd12341234",
+      "placement_policy": {
+        "policy_name": "fixed_scale",
+        "instances": 1,
+        "regions": [
+          "us-east"
+        ]
+      }
+    },
+    {
+      "name": "read",
+      "workload_type": "v8",
+      "trigger_subjects": [
+        "todo.0_0_1.read"
+      ],
+      "file_hash": "abcdabcd12341234",
+      "placement_policy": {
+        "policy_name": "fixed_scale",
+        "instances": 1,
+        "regions": [
+          "us-east"
+        ]
+      }
+    },
+    {
+      "name": "update",
+      "workload_type": "v8",
+      "trigger_subjects": [
+        "todo.0_0_1.update"
+      ],
+      "file_hash": "abcdabcd12341234",
+      "placement_policy": {
+        "policy_name": "fixed_scale",
+        "instances": 1,
+        "regions": [
+          "us-west"
+        ]
+      }
+    },
+    {
+      "name": "delete",
+      "workload_type": "v8",
+      "trigger_subjects": [
+        "todo.0_0_1.delete"
+      ],
+      "file_hash": "abcdabcd12341234",
+      "placement_policy": {
+        "policy_name": "fixed_scale",
+        "instances": 1,
+        "regions": [
+          "us-west"
+        ]
+      }
+    },
+    {
+      "name": "apigateway",
+      "workload_type": "native",
+      "file_hash": "abcdabcd12341234",
+      "placement_policy": {
+        "policy_name": "fixed_scale",
+        "instances": 1,
+        "regions": [
+          "asia-east"
+        ]
+      },
+      "env_map": {
+        "NATS_SERVER": "<NATS SERVER URL>",
+        "NATS_NKEY": "<NATS USER NKEY>",
+        "NATS_JWT": "<NATS USER JWT>"
+      }
+    }
+  ]
+}
