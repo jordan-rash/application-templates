@@ -112,17 +112,17 @@ func setMyContext() (*MyContext, error) {
 	mc := new(MyContext)
 	mc.ctx = context.Background()
 
-	mc.NatsServer, found = os.LookupEnv("NATS_SERVER")
+	mc.NatsServer, found = os.LookupEnv("NEX_HOSTSERVICES_NATS_SERVER")
 	if !found {
-		return mc, fmt.Errorf("NATS_SERVER not set")
+		return mc, fmt.Errorf("NEX_HOSTSERVICES_NATS_SERVER not set")
 	}
-	mc.NatsNkey, found = os.LookupEnv("NATS_NKEY")
+	mc.NatsNkey, found = os.LookupEnv("NEX_HOSTSERVICES_NATS_USER_SEED")
 	if !found {
-		return mc, fmt.Errorf("NATS_NKEY not set")
+		return mc, fmt.Errorf("NEX_HOSTSERVICES_NATS_USER_SEED not set")
 	}
-	mc.NatsJwt, found = os.LookupEnv("NATS_JWT")
+	mc.NatsJwt, found = os.LookupEnv("NEX_HOSTSERVICES_NATS_USER_JWT")
 	if !found {
-		return mc, fmt.Errorf("NATS_JWT not set")
+		return mc, fmt.Errorf("NEX_HOSTSERVICES_NATS_USER_JWT not set")
 	}
 	return mc, nil
 }

@@ -73,11 +73,6 @@
         "regions": [
           "asia-east"
         ]
-      },
-      "env_map": {
-        "NATS_SERVER": "<NATS SERVER URL>",
-        "NATS_NKEY": "<NATS USER NKEY>",
-        "NATS_JWT": "<NATS USER JWT>"
       }
     }
   ]
