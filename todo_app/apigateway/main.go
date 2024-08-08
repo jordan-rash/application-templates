@@ -33,7 +33,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	nc, err := nats.Connect(mCtx.NatsServer, nats.UserJWTAndSeed(mCtx.NatsJwt, mCtx.NatsNkey))
+	nc, err := nats.Connect(mCtx.NatsServer,
+		nats.Name("todo-apigateway"),
+		nats.UserJWTAndSeed(mCtx.NatsJwt, mCtx.NatsNkey),
+	)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error connecting to NATS server: %v\n", err)
 		return
