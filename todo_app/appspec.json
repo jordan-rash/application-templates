@@ -13,9 +13,7 @@
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": [
-          "us-east"
-        ]
+        "regions": []
       }
     },
     {
@@ -28,9 +26,7 @@
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": [
-          "us-east"
-        ]
+        "regions": []
       }
     },
     {
@@ -43,9 +39,7 @@
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": [
-          "us-west"
-        ]
+        "regions": []
       }
     },
     {
@@ -58,9 +52,7 @@
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": [
-          "us-west"
-        ]
+        "regions": []
       }
     },
     {
@@ -70,9 +62,7 @@
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": [
-          "asia-east"
-        ]
+        "regions": []
       }
     }
   ]
