@@ -44,64 +44,28 @@ func main() {
 	setupSignalHandlers(nc)
 
 	fmt.Fprintln(os.Stdout, "Starting TODO API Gateway service")
-	_, err = services.AddService(nc, services.Config{
-		Name:    "TodoCreate",
+	s, err := services.AddService(nc, services.Config{
+		Name:    "TodoApiGateway",
 		Version: VERSION,
-		Endpoint: &services.EndpointConfig{
-			Subject: "api.create",
-			Handler: services.HandlerFunc(createHandler(nc)),
-		},
 	})
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error adding service: %v\n", err)
 		return
 	}
-	_, err = services.AddService(nc, services.Config{
-		Name:    "TodoRead",
-		Version: VERSION,
-		Endpoint: &services.EndpointConfig{
-			Subject: "api.read",
-			Handler: services.HandlerFunc(readHandler(nc)),
-		},
-	})
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error adding service: %v\n", err)
-		return
-	}
-	_, err = services.AddService(nc, services.Config{
-		Name:    "TodoUpdate",
-		Version: VERSION,
-		Endpoint: &services.EndpointConfig{
-			Subject: "api.update",
-			Handler: services.HandlerFunc(updateHandler(nc)),
-		},
-	})
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error adding service: %v\n", err)
-		return
-	}
-	_, err = services.AddService(nc, services.Config{
-		Name:    "TodoDelete",
-		Version: VERSION,
-		Endpoint: &services.EndpointConfig{
-			Subject: "api.delete",
-			Handler: services.HandlerFunc(deleteHandler(nc)),
-		},
-	})
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error adding service: %v\n", err)
-		return
-	}
-	_, err = services.AddService(nc, services.Config{
-		Name:    "TodoHealthCheck",
-		Version: VERSION,
-		Endpoint: &services.EndpointConfig{
-			Subject: "api.healthz",
-			Handler: services.HandlerFunc(healthCheckHandler(nc)),
-		},
-	})
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error adding service: %v\n", err)
+
+	var addEndpointErrs error
+	err = s.AddEndpoint("TodoCreate", services.HandlerFunc(createHandler(nc)), services.WithEndpointSubject("api.create"))
+	addEndpointErrs = errors.Join(addEndpointErrs, err)
+	err = s.AddEndpoint("TodoRead", services.HandlerFunc(readHandler(nc)), services.WithEndpointSubject("api.read"))
+	addEndpointErrs = errors.Join(addEndpointErrs, err)
+	err = s.AddEndpoint("TodoUpdate", services.HandlerFunc(updateHandler(nc)), services.WithEndpointSubject("api.update"))
+	addEndpointErrs = errors.Join(addEndpointErrs, err)
+	err = s.AddEndpoint("TodoDelete", services.HandlerFunc(deleteHandler(nc)), services.WithEndpointSubject("api.delete"))
+	addEndpointErrs = errors.Join(addEndpointErrs, err)
+	err = s.AddEndpoint("TodoHealthz", services.HandlerFunc(healthCheckHandler(nc)), services.WithEndpointSubject("api.healthz"))
+	addEndpointErrs = errors.Join(addEndpointErrs, err)
+	if addEndpointErrs != nil {
+		fmt.Fprintf(os.Stderr, "Error adding service endpoints: %v\n", addEndpointErrs)
 		return
 	}
 
@@ -127,6 +91,7 @@ func setMyContext() (*MyContext, error) {
 	if !found {
 		return mc, fmt.Errorf("NEX_HOSTSERVICES_NATS_USER_JWT not set")
 	}
+	fmt.Printf("Current Context:\nNEX_HOSTSERVICES_NATS_SERVER: %s\nNEX_HOSTSERVICES_NATS_USER_JWT: %s\nNEX_HOSTSERVICES_NATS_USER_SEED: %s\n", mc.NatsServer, mc.NatsJwt, mc.NatsNkey)
 	return mc, nil
 }
 

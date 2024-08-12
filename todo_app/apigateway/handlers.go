@@ -188,7 +188,7 @@ func updateHandler(nc *nats.Conn) func(req services.Request) {
 			return
 		}
 
-		req.Respond([]byte("TODO Updated"))
+		_ = req.Respond([]byte("TODO Updated"))
 	}
 }
 
