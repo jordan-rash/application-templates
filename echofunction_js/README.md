@@ -1,14 +1,20 @@
 # EchoFunction | Javascript
 
-### Install the `synctl` binary
-
-> instructions TBD
-
-### Set your environment
+### Set your environment via Environment
 ```bash
 export SCP_SERVER=https://cloud.synadia.com && \
 export SCP_TOKEN=uat_<YOUR_KEY_FROM_SYNADIA_CLOUD_UI> && \
 export SCP_ACCOUNT=<YOUR_SYNADIA_CLOUD_ACCOUNT_ID>
+```
+You will have to include the `--no-context` to all further `synctl` commands to use the environment
+
+### Set your `synctl` context
+```bash
+synctl context add synadia-test-user <SC_ACCT_ID> \
+  --server https://cloud.nas-test.synadia.io \
+  --token uat_.....
+
+synctl context select --name synadia-test-user
 ```
 
 ### Upload your artifact
@@ -34,7 +40,7 @@ synctl app versions --name echofunction_js
 ```bash
 synctl app deploy --name echofunction_js --version 0.0.1
 ```
-To verify deployment, run the `versions` command again. The deployed version should be highlighted
+To verify deployment, run the `versions` command again. The deployed version should be highlighted green
 ```bash
 synctl app versions --name echofunction_js
 ```
