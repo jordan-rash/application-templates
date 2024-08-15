@@ -6,16 +6,13 @@
     {
       "name": "echofunction",
       "workload_type": "v8",
-      "file_hash": "5a84095da86ba702a6624a43aa7fe5583fa1d4804207eef2668360a21f4be16e",
       "trigger_subjects": [
         "my.echotrigger"
       ],
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
-        "regions": [
-          "us-east"
-        ]
+        "regions": [ ]
       }
     }
   ]
