@@ -9,7 +9,6 @@
       "trigger_subjects": [
         "todo.0_0_1.create"
       ],
-      "file_hash": "abcdabcd12341234",
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
@@ -22,7 +21,6 @@
       "trigger_subjects": [
         "todo.0_0_1.read"
       ],
-      "file_hash": "abcdabcd12341234",
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
@@ -35,7 +33,6 @@
       "trigger_subjects": [
         "todo.0_0_1.update"
       ],
-      "file_hash": "abcdabcd12341234",
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
@@ -48,7 +45,6 @@
       "trigger_subjects": [
         "todo.0_0_1.delete"
       ],
-      "file_hash": "abcdabcd12341234",
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
@@ -58,7 +54,6 @@
     {
       "name": "apigateway",
       "workload_type": "native",
-      "file_hash": "abcdabcd12341234",
       "placement_policy": {
         "policy_name": "fixed_scale",
         "instances": 1,
