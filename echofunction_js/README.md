@@ -33,16 +33,16 @@ synctl app put --file ./appspec.json
 To verify the upload
 ```bash
 synctl app ls && \
-synctl app versions --name echofunction_js
+synctl app versions --name echofunctionjs
 ```
 
 ### Deploy your application
 ```bash
-synctl app deploy --name echofunction_js --version 0.0.1
+synctl app deploy --name echofunctionjs --version 0.0.1
 ```
 To verify deployment, run the `versions` command again. The deployed version should be highlighted green
 ```bash
-synctl app versions --name echofunction_js
+synctl app versions --name echofunctionjs
 ```
 
 > This step can also be completed via the UI under the `Applications` tab
@@ -63,5 +63,5 @@ Your response should be:
 
 ### Undeploy your application
 ```bash
-synctl app undeploy --name echofunction_js
+synctl app undeploy --name echofunctionjs
 ```
